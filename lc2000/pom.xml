@@ -44,6 +44,12 @@
             <version>1.8-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.atomashpolskiy</groupId>
+            <artifactId>bt-dht</artifactId>
+            <version>1.8-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -61,6 +67,17 @@
             <artifactId>nanohttpd-nanolets</artifactId>
             <version>2.3.2-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.atomashpolskiy</groupId>
+            <artifactId>bt-dht</artifactId>
+            <version>1.8-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.atomashpolskiy</groupId>
+            <artifactId>bt-dht</artifactId>
+            <version>1.8-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
