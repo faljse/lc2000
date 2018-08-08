@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bt-bencoding" />
+        <module name="bt-cli" />
+        <module name="bt-core" />
+        <module name="bt-dht" />
+        <module name="bt-http-tracker-client" />
+        <module name="bt-tests" />
+        <module name="bt-upnp" />
+        <module name="examples" />
+        <module name="lc2000" />
+        <module name="libmldht" />
+        <module name="nanohttpd" />
+        <module name="nanohttpd-apache-fileupload" />
+        <module name="nanohttpd-nanolets" />
+        <module name="nanohttpd-samples" />
+        <module name="nanohttpd-webserver" />
+        <module name="nanohttpd-webserver-markdown-plugin" />
+        <module name="nanohttpd-websocket" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bt-bencoding" target="1.8" />
+      <module name="bt-cli" target="1.8" />
+      <module name="bt-core" target="1.8" />
+      <module name="bt-dht" target="1.8" />
+      <module name="bt-dht-parent" target="1.8" />
+      <module name="bt-http-tracker-client" target="1.8" />
+      <module name="bt-parent" target="1.8" />
+      <module name="bt-tests" target="1.8" />
+      <module name="bt-upnp" target="1.8" />
+      <module name="examples" target="1.8" />
+      <module name="jacoco-report" target="1.8" />
+      <module name="lc2000" target="10" />
+      <module name="libmldht" target="1.8" />
+      <module name="nanohttpd" target="1.7" />
+      <module name="nanohttpd-apache-fileupload" target="1.7" />
+      <module name="nanohttpd-nanolets" target="1.7" />
+      <module name="nanohttpd-project" target="1.7" />
+      <module name="nanohttpd-samples" target="1.7" />
+      <module name="nanohttpd-webserver" target="1.7" />
+      <module name="nanohttpd-webserver-markdown-plugin" target="1.7" />
+      <module name="nanohttpd-websocket" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

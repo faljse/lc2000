@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/bt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-bencoding" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-cli" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-dht" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-dht/bt-dht" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-dht/the8472/mldht" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-http-tracker-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/bt-upnp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/examples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bt/jacoco-report" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd/core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd/fileupload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd/markdown-plugin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd/nanolets" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd/samples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd/webserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nanohttpd/websocket" charset="UTF-8" />
+  </component>
+</project>

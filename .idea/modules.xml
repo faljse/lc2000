@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-bencoding/bt-bencoding.iml" filepath="$PROJECT_DIR$/bt/bt-bencoding/bt-bencoding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-cli/bt-cli.iml" filepath="$PROJECT_DIR$/bt/bt-cli/bt-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-core/bt-core.iml" filepath="$PROJECT_DIR$/bt/bt-core/bt-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-dht/bt-dht/bt-dht.iml" filepath="$PROJECT_DIR$/bt/bt-dht/bt-dht/bt-dht.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-dht/bt-dht-parent.iml" filepath="$PROJECT_DIR$/bt/bt-dht/bt-dht-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-http-tracker-client/bt-http-tracker-client.iml" filepath="$PROJECT_DIR$/bt/bt-http-tracker-client/bt-http-tracker-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-parent.iml" filepath="$PROJECT_DIR$/bt/bt-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-tests/bt-tests.iml" filepath="$PROJECT_DIR$/bt/bt-tests/bt-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-upnp/bt-upnp.iml" filepath="$PROJECT_DIR$/bt/bt-upnp/bt-upnp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/examples/examples.iml" filepath="$PROJECT_DIR$/bt/examples/examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/jacoco-report/jacoco-report.iml" filepath="$PROJECT_DIR$/bt/jacoco-report/jacoco-report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc2000/lc2000.iml" filepath="$PROJECT_DIR$/lc2000/lc2000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bt/bt-dht/the8472/mldht/libmldht.iml" filepath="$PROJECT_DIR$/bt/bt-dht/the8472/mldht/libmldht.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/core/nanohttpd.iml" filepath="$PROJECT_DIR$/nanohttpd/core/nanohttpd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/fileupload/nanohttpd-apache-fileupload.iml" filepath="$PROJECT_DIR$/nanohttpd/fileupload/nanohttpd-apache-fileupload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/nanolets/nanohttpd-nanolets.iml" filepath="$PROJECT_DIR$/nanohttpd/nanolets/nanohttpd-nanolets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/nanohttpd-project.iml" filepath="$PROJECT_DIR$/nanohttpd/nanohttpd-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/samples/nanohttpd-samples.iml" filepath="$PROJECT_DIR$/nanohttpd/samples/nanohttpd-samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/webserver/nanohttpd-webserver.iml" filepath="$PROJECT_DIR$/nanohttpd/webserver/nanohttpd-webserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/markdown-plugin/nanohttpd-webserver-markdown-plugin.iml" filepath="$PROJECT_DIR$/nanohttpd/markdown-plugin/nanohttpd-webserver-markdown-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nanohttpd/websocket/nanohttpd-websocket.iml" filepath="$PROJECT_DIR$/nanohttpd/websocket/nanohttpd-websocket.iml" />
+    </modules>
+  </component>
+</project>
