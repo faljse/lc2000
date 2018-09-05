@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package bt.module;
+package info.faljse;
 
 import bt.data.ChunkVerifier;
 import bt.data.DataDescriptorFactory;
@@ -27,6 +27,7 @@ import bt.event.EventSink;
 import bt.event.EventSource;
 import bt.metainfo.IMetadataService;
 import bt.metainfo.MetadataService;
+import bt.module.*;
 import bt.net.*;
 import bt.net.buffer.BufferManager;
 import bt.net.buffer.IBufferManager;
@@ -70,17 +71,6 @@ import java.util.concurrent.ExecutorService;
  */
 public class OverridenServiceModule implements Module {
 
-    /**
-     * Returns the extender for contributing custom extensions to the ServiceModule.
-     * Should be invoked from the dependent Module's {@link Module#configure(Binder)} method.
-     *
-     * @param binder DI binder passed to the Module that invokes this method.
-     * @return Extender for contributing custom extensions
-     * @since 1.5
-     */
-    public static ServiceModuleExtender extend(Binder binder) {
-        return new ServiceModuleExtender(binder);
-    }
 
     /**
      * Contribute a peer source factory.
@@ -131,9 +121,6 @@ public class OverridenServiceModule implements Module {
     public void configure(Binder binder) {
         binder.bind(Config.class).toInstance(config);
 
-        OverridenServiceModule.extend(binder).initAllExtensions()
-                .addTrackerFactory(UdpTrackerFactory.class, "udp")
-                .addConnectionAcceptor(SocketChannelConnectionAcceptor.class);
 
         // core services that contribute startup lifecycle bindings and should be instantiated eagerly
         binder.bind(IMessageDispatcher.class).to(MessageDispatcher.class).asEagerSingleton();

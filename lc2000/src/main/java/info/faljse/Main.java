@@ -6,7 +6,6 @@ import bt.data.Storage;
 import bt.data.file.FileSystemStorage;
 import bt.dht.DHTConfig;
 import bt.dht.DHTModule;
-import bt.module.OverridenServiceModule;
 import bt.portmapping.upnp.UpnpPortMapperModule;
 import bt.protocol.crypto.EncryptionPolicy;
 import bt.runtime.BtClient;
@@ -107,7 +106,7 @@ public class Main {
 //
 //                    }
 //                })
- .magnet("magnet:?xt=urn:btih:850c0faf2225cdffb06abf204bba05f0489a445b")
+ .magnet("magnet:?xt=urn:btih:c792fb28a1af64fffce387d5baa0d604d1261cbc&dn=Two.Point.Hospital.v1.0.20828.Update-SKIDROW&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710")
 //                .torrent(() -> {
 //                    try {
 //                        return runtime.service(IMetadataService.class).fromInputStream(new FileInputStream("Fiat Punto 176 FEDERBEIN A. U. E..pdf.torrent"));
