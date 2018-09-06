@@ -43,5 +43,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.25" level="project" />
     <orderEntry type="module" module-name="nanohttpd" />
     <orderEntry type="module" module-name="nanohttpd-nanolets" />
+    <orderEntry type="library" name="Maven: com.eclipsesource.minimal-json:minimal-json:0.9.5" level="project" />
   </component>
 </module>

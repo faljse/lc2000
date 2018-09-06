@@ -16,8 +16,17 @@ import bt.torrent.selector.SequentialSelector;
 import com.google.inject.Module;
 import org.nanohttpd.util.ServerRunner;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
+import java.security.*;
+import java.security.interfaces.ECPrivateKey;
+import java.security.interfaces.ECPublicKey;
 
 public class Main {
     private BtRuntime runtime;
@@ -32,8 +41,24 @@ public class Main {
                 ServerRunner.run(WebIf.class);
             }
         }).start();
-        new Main().bla();
+        try {
+            new Main().crypto();
+        } catch (GeneralSecurityException | IOException e) {
+            e.printStackTrace();
+        }
+        // new Main().bla();
     }
+
+    private void crypto() throws GeneralSecurityException, IOException {
+       Block b=new Block();
+       KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+        KeyPair pair = keyGen.generateKeyPair();
+        b.init(pair.getPublic());
+
+
+    }
+
+
 
     private void bla() {
         // enable multithreaded verification of torrent data
