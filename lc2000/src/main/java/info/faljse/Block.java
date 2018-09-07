@@ -10,8 +10,7 @@ public class Block {
     public String nextPubKey;
     public String nestRSAEncryptedAesKey;
     public String nextAesEncryptedPrivateKey;
-
-
+    public final static int AES_KEYSIZE=256;
 
     public void init(PublicKey nextParticipant) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
 
@@ -20,10 +19,8 @@ public class Block {
         PrivateKey privKey = keyPair.getPrivate();
         PublicKey pubKey = keyPair.getPublic();
 
-
-
         KeyGenerator generator = KeyGenerator.getInstance("AES");
-        generator.init(128); // The AES key size in number of bits
+        generator.init(AES_KEYSIZE); // The AES key size in number of bits
         SecretKey secKey = generator.generateKey();
         Cipher aesCipher = Cipher.getInstance("AES");
         aesCipher.init(Cipher.ENCRYPT_MODE, secKey);
@@ -33,8 +30,6 @@ public class Block {
         Cipher rsaCipher = Cipher.getInstance("RSA");
         rsaCipher.init(Cipher.ENCRYPT_MODE, nextParticipant);
         byte[] encryptedKey = rsaCipher.doFinal(secKey.getEncoded());
-
-
 
         this.nextAesEncryptedPrivateKey=aesEncryptedPrivateKey.toString();
         this.nestRSAEncryptedAesKey=encryptedKey.toString();
