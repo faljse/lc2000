@@ -1,90 +1,66 @@
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"/>
+<link rel="stylesheet" href="static/bulma/css/bulma.css"/>
+<script src="static/js/fetchival.js"></script> <!-- https://github.com/typicode/fetchival -->
+<script src="static/vue/vue.js"></script>
 
-
-<div class="field">
-    <label class="label">Name</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="Text input">
-    </div>
-</div>
-
-<div class="field">
-    <label class="label">Username</label>
-    <div class="control has-icons-left has-icons-right">
-        <input class="input is-success" type="text" placeholder="Text input" value="bulma">
-        <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-        <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-    </div>
-    <p class="help is-success">This username is available</p>
-</div>
-
-<div class="field">
-    <label class="label">Email</label>
-    <div class="control has-icons-left has-icons-right">
-        <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-        <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-        <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-    </div>
-    <p class="help is-danger">This email is invalid</p>
-</div>
-
-<div class="field">
-    <label class="label">Subject</label>
-    <div class="control">
-        <div class="select">
-            <select>
-                <option>Select dropdown</option>
-                <option>With options</option>
-            </select>
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <p class="title">This is a demo to a <a href="https://github.com/jgthms/bulma/issues/1080">Pull Request</a> on Bulma.io</p>
+            <p class="subtitle">Responsive table demo.</p>
         </div>
     </div>
-</div>
+</section>
 
-<div class="field">
-    <label class="label">Message</label>
-    <div class="control">
-        <textarea class="textarea" placeholder="Textarea"></textarea>
-    </div>
-</div>
 
-<div class="field">
-    <div class="control">
-        <label class="checkbox">
-            <input type="checkbox">
-            I agree to the <a href="#">terms and conditions</a>
-        </label>
-    </div>
-</div>
+<div id="app" class="demo">
 
-<div class="field">
-    <div class="control">
-        <label class="radio">
-            <input type="radio" name="question">
-            Yes
-        </label>
-        <label class="radio">
-            <input type="radio" name="question">
-            No
-        </label>
-    </div>
-</div>
+    <h1 id="responsive">Resize your browser</h1>
+    <p>The table changes on <strong>800px</strong> in order to demonstrate the functionality. The PR is a little bit different.</p>
+    <br>
+    <table class="table is-responsive" >
+        <thead>
+        <tr>
+            <th>Header A</th>
+            <th>Header B</th>
+            <th>Header C</th>
+            <th>Header D</th>
+            <th>Header E</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="entry in blocks">
+            <td>{{entry}}</td>
+        </tr>
+        </tbody>
+    </table>
 
-<div class="field is-grouped">
-    <div class="control">
-        <button class="button is-link">Submit</button>
-    </div>
-    <div class="control">
-        <button class="button is-text">Cancel</button>
-    </div>
 </div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            blocks: []
+        },
+        created () {
+            this.fetchData()
+        },
+        watch: {
+            '$route': 'fetchData'
+        },
+        methods: {
 
+            fetchData() {
+                var self = this;
+                this.error = this.post = null
+                this.loading = true
+                // POST /users
+                fetchival('/blocks').get()
+                    .then(function(json) {
+                        self.blocks=json;
+                    })
+            }
+        }
+    })
+</script>
 </html>

@@ -31,6 +31,8 @@ import java.security.interfaces.ECPublicKey;
 public class Main {
     private BtRuntime runtime;
     private BtClient client;
+    public static Chain chain=new Chain();
+
 
     public static void main(String args[]) {
         // System.setProperty("java.net.preferIPv4Stack" , "true");
@@ -43,17 +45,23 @@ public class Main {
         }).start();
         try {
             new Main().crypto();
-        } catch (GeneralSecurityException | IOException e) {
+        } catch ( Exception e) {
             e.printStackTrace();
         }
+
         // new Main().bla();
     }
 
-    private void crypto() throws GeneralSecurityException, IOException {
-       Block b=new Block();
-       KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
-        KeyPair pair = keyGen.generateKeyPair();
-        //b.init(pair.getPublic());
+    private void crypto() throws NoSuchAlgorithmException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, SignatureException, NoSuchPaddingException {
+        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+        Block b1=new Block();
+        KeyPair pair1 = keyGen.generateKeyPair();
+        b1.init(pair1.getPublic(), pair1.getPrivate(), "erster".getBytes());
+        chain.blocks.add(b1);
+        Block b2=new Block();
+        KeyPair pair2 = keyGen.generateKeyPair();
+        b2.init(pair2.getPublic(), pair2.getPrivate(), "zweiter".getBytes());
+        chain.blocks.add(b2);
 
 
     }

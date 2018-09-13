@@ -1,11 +1,12 @@
 package info.faljse;
+import com.eclipsesource.json.Json;
+import com.eclipsesource.json.JsonArray;
+import com.eclipsesource.json.JsonObject;
 import org.nanohttpd.protocols.http.IHTTPSession;
-import org.nanohttpd.protocols.http.NanoHTTPD;
 import org.nanohttpd.protocols.http.response.IStatus;
 import org.nanohttpd.protocols.http.response.Response;
 import org.nanohttpd.protocols.http.response.Status;
 import org.nanohttpd.router.RouterNanoHTTPD;
-import org.seamless.util.MimeType;
 
 import java.io.*;
 import java.util.Map;
@@ -25,11 +26,9 @@ public class WebIf extends RouterNanoHTTPD {
         super.addMappings();
 
 
-        addRoute("/user", UserHandler.class);
-        addRoute("/user", UserHandler.class); // add it twice to execute the
-        // priority == priority case
-        addRoute("/user/help", UserHandler.class);
-        addRoute("/user/:id", UserHandler.class);
+        addRoute("/blocks", BlockHandler.class);
+        addRoute("/user/help", BlockHandler.class);
+        addRoute("/user/:id", BlockHandler.class);
         addRoute("/general/:param1/:param2", GeneralHandler.class);
         addRoute("/photos/:customer_id/:photo_id", null);
         addRoute("/test", String.class);
@@ -38,9 +37,9 @@ public class WebIf extends RouterNanoHTTPD {
         addRoute("/toBeDeleted", String.class);
         removeRoute("/toBeDeleted");
         addRoute("/stream", StreamUrl.class);
-        addRoute("/", StaticPageTestHandler.class, new File("webroot/index.html").getAbsoluteFile());
-        addRoute("/static(.)+", StaticPageTestHandler.class, new File("webroot/").getAbsoluteFile());
 
+        addRoute("/static(.)+", StaticPageTestHandler.class, new File("webroot/").getAbsoluteFile());
+        addRoute("/", StaticPageTestHandler.class, new File("webroot/index.html").getAbsoluteFile());
     }
 
     static public class StreamUrl extends DefaultStreamHandler {
@@ -74,7 +73,7 @@ public class WebIf extends RouterNanoHTTPD {
         }
     }
 
-    public static class UserHandler extends DefaultHandler {
+    public static class BlockHandler extends DefaultHandler {
 
         @Override
         public String getMimeType() {
@@ -93,22 +92,15 @@ public class WebIf extends RouterNanoHTTPD {
 
         @Override
         public Response get(UriResource uriResource, Map<String, String> urlParams, IHTTPSession session) {
-            String text = "<html><body>User handler. Method: " + session.getMethod().toString() + "<br>";
-            text += "<h1>Uri parameters:</h1>";
-            for (Map.Entry<String, String> entry : urlParams.entrySet()) {
-                String key = entry.getKey();
-                String value = entry.getValue();
-                text += "<div> Param: " + key + "&nbsp;Value: " + value + "</div>";
-            }
-            text += "<h1>Query parameters:</h1>";
-            for (Map.Entry<String, String> entry : session.getParms().entrySet()) {
-                String key = entry.getKey();
-                String value = entry.getValue();
-                text += "<div> Query Param: " + key + "&nbsp;Value: " + value + "</div>";
-            }
-            text += "</body></html>";
 
-            return Response.newFixedLengthResponse(text);
+            JsonArray blocks = Json.array();
+            for(Block b: Main.chain.blocks) {
+                JsonObject o = new JsonObject();
+                o.add("data", b.data.toString());
+                blocks.add(o);
+            }
+
+            return Response.newFixedLengthResponse(blocks.toString());
         }
     }
 }

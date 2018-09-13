@@ -14,8 +14,8 @@ public class Block {
     public byte[] nextAesEncryptedPrivateKey;
     public final static int AES_KEYSIZE=256;
 
-    public void init(PublicKey nextParticipant, PrivateKey signKey) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, SignatureException {
-
+    public void init(PublicKey nextParticipant, PrivateKey signKey, byte[] data) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, SignatureException {
+        this.data=data;
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
         KeyPair keyPair = keyGen.generateKeyPair();
         PrivateKey privKey = keyPair.getPrivate();
