@@ -33,7 +33,7 @@ public class Main {
     private BtClient client;
 
     public static void main(String args[]) {
-        System.setProperty("java.net.preferIPv4Stack" , "true");
+        // System.setProperty("java.net.preferIPv4Stack" , "true");
 
         new Thread(new Runnable() {
             @Override
@@ -53,7 +53,7 @@ public class Main {
        Block b=new Block();
        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
         KeyPair pair = keyGen.generateKeyPair();
-        b.init(pair.getPublic());
+        //b.init(pair.getPublic());
 
 
     }

@@ -10,8 +10,6 @@ import org.seamless.util.MimeType;
 import java.io.*;
 import java.util.Map;
 
-import static org.nanohttpd.protocols.http.response.Response.newFixedLengthResponse;
-
 
 public class WebIf extends RouterNanoHTTPD {
     private static final int PORT = 9090;
@@ -25,6 +23,8 @@ public class WebIf extends RouterNanoHTTPD {
     @Override
     public void addMappings() {
         super.addMappings();
+
+
         addRoute("/user", UserHandler.class);
         addRoute("/user", UserHandler.class); // add it twice to execute the
         // priority == priority case
@@ -38,7 +38,9 @@ public class WebIf extends RouterNanoHTTPD {
         addRoute("/toBeDeleted", String.class);
         removeRoute("/toBeDeleted");
         addRoute("/stream", StreamUrl.class);
-        addRoute("/browse/(.)+", StaticPageTestHandler.class, new File("webroot/").getAbsoluteFile());
+        addRoute("/", StaticPageTestHandler.class, new File("webroot/index.html").getAbsoluteFile());
+        addRoute("/static(.)+", StaticPageTestHandler.class, new File("webroot/").getAbsoluteFile());
+
     }
 
     static public class StreamUrl extends DefaultStreamHandler {
