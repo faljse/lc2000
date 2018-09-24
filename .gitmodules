@@ -1,3 +1,6 @@
 [submodule "nanohttpd"]
 	path = nanohttpd
 	url = https://github.com/NanoHttpd/nanohttpd.git
+[submodule "mldht"]
+	path = mldht
+	url = https://github.com/the8472/mldht
