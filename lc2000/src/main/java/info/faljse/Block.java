@@ -3,7 +3,6 @@ package info.faljse;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
-import javafx.beans.binding.IntegerBinding;
 
 import javax.crypto.*;
 import java.security.*;
