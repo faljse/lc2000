@@ -18,7 +18,7 @@ public class Chain {
             throw new RuntimeException("wrong block id");
         }
         try {
-            if (verify(b.data, b.signature, last.nextPubKey)) {
+            if (verify(b.payload, b.signature, last.nextRSAEncryptedAesKey)) {
                 return;
             }
             else throw new RuntimeException("Signature doesnt match");

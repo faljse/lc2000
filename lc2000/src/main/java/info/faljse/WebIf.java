@@ -23,7 +23,7 @@ public class WebIf {
             JsonArray blocks = Json.array();
             for (Block b : Main.chain.blocks) {
                 JsonObject o = new JsonObject();
-                o.add("data", b.data.toString());
+                o.add("data", b.payload.toString());
                 blocks.add(o);
             }
             return "";
