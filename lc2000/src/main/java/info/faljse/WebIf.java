@@ -19,7 +19,6 @@ public class WebIf {
         get("/", (request, response) -> {return "JO!";});
         post("/addBlock", (req, res) -> {
             var json=Json.parse(req.body()).asObject();
-
             JsonArray blocks = Json.array();
             for (Block b : Main.chain.blocks) {
                 JsonObject o = new JsonObject();
