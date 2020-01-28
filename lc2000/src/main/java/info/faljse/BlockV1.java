@@ -13,5 +13,5 @@ public class BlockV1 {
     public int id;
     public byte[] payload;
     public byte[] signature;
-    public KeysetHandle publicHandle;
+    public KeysetHandle nextPublicKey;
 }
