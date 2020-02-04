@@ -1,4 +1,5 @@
 package info.faljse;
+import com.amazonaws.util.Base64;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
@@ -25,18 +26,16 @@ public class WebIf {
         get("/", (request, response) -> {return "JO!";});
         post("/addBlock", (req, res) -> {
             var json=Json.parse(req.body()).asObject();
-            var payload = json.getString("payload","");
-            var signature = json.getString("signature","");
+            var payload = Base64.decode(json.getString("payload",""));
+            var signature = Base64.decode(json.getString("signature",""));
             var nextPublicKey = json.getString("nextPublicKey","");
 
             BlockV1 b=new BlockV1();
-            b.payload=payload.getBytes();
-            b.signature=signature.getBytes();
+            b.payload=payload;
+            b.signature=signature;
             b.nextPublicKey= CleartextKeysetHandle.read(
                     JsonKeysetReader.withBytes(nextPublicKey.getBytes()));
             addBlock(b);
-
-
             return "";
         });
     }
